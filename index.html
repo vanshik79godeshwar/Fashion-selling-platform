@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="box-form">
+    <div class="left">
+        <div class="overlay">
+        <h1>Tamannah</h1>
+        <p class="message">Elevating Elegance, Redefining Luxury.</p>
+        <p class="message"> Where Exquisite Style Meets Unparalleled Sophistication.</p>
+        <p class="message">In a World of Trends, Tamannah Sets the Standard for Timeless Beauty.</p>
+        <p class="message">Unleash Your Inner Icon with Tamannah's Prestigious Designs.</p>
+        <span>
+            <p>login with social media</p>
+            <a href="#"><i ><img src="facebook-app-symbol.png"></i></a>
+            <a href="#"><i ><img src="twitter.png"></i></a>
+        </span>
+        </div>
+    </div>
+    
+    
+    <div class="right">
+        <h5>Login</h5>
+        <p>Don't have an account? <a href="sign-up.html">Create Your Account</a> it takes less than a minute</p>
+        <div class="inputs">
+            <input type="text" id="username" placeholder="Username">
+            <br>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+            
+            <br><br>
+            
+        <div class="forget-password">
+            <p>Forgot password?</p>
+        </div>
+            
+            <br>
+            <button onclick="validateLogin()">Login</button>
+    </div>
+    
+</div>
+
+<script>
+    function validateLogin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if (username === "" || password === "") {
+            alert("Username and password are required.");
+            return false;
+        }
+
+        if(username === "vanshik" || password === "18112005Vanshik?")
+        {
+            alert("you are admin...Welcome sir");
+            window.location.href = "youtube.com"; 
+
+        }
+
+        alert("Login successful!");
+        window.location.href = "shopping.html"; 
+    }
+</script>
+  
+</body>
+</html>

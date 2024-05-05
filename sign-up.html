@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>sign-up Form</title>
+    <link rel="stylesheet" href="sign-up.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#" onsubmit="return validateForm()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="fullname" placeholder="Enter your name" >
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="username" placeholder="Enter your username" >
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" id="email" placeholder="Enter your email" >
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="phone" placeholder="Enter your number" >
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password" >
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" >
+          </div>
+        </div>
+        <div class="gender-details">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <input type="radio" name="gender" id="male" value="male" >
+            <label for="male">
+              <span class="dot"></span>
+              <span class="gender">Male</span>
+            </label>
+            <input type="radio" name="gender" id="female" value="female" >
+            <label for="female">
+              <span class="dot"></span>
+              <span class="gender">Female</span>
+            </label>
+            <input type="radio" name="gender" id="preferNotToSay" value="preferNotToSay" >
+            <label for="preferNotToSay">
+              <span class="dot"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var fullname = document.getElementById('fullname').value;
+      var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var gender = document.querySelector('input[name="gender"]:checked');
+
+      if (fullname === "" || username === "" || email === "" || phone === "" || password === "" || confirmPassword === "" || !gender) {
+        alert("All fields are required.");
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
